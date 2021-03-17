@@ -28,15 +28,12 @@ let obj3 = {
 appleCounter(obj3); // => 3
 ***********************************************************************/
 //Understand
-//  take in an object with keys and values, some include 'apple'
+//  take in one object with keys and values, some include 'apple'
 //  return the number of keys that contain 'apple' at some point
 //Plan
 //  create a counter variable
 //  iterate over the object (for...in loop is specifically for keys)
 //    if the current key includes 'apple', increase the counter
-//      use Object.keys to create an array of the keys
-//      set the array to lower case
-//      if the array includes 'apple' increase counter by one
 //  return the counter
 
 
@@ -44,13 +41,12 @@ appleCounter(obj3); // => 3
 function appleCounter(appleObj) {                             //takes in one object with possibly multiple nested objects
   let counter = 0;                                            //create a counter variable
 
-  for(let variable in appleObj) {                             //iterate over the keys in the object
+  for(let key in appleObj) {                                  //Iterate over the keys in that object
 
+    if(key.toLowerCase().includes('apple')) {                 //See if the key (a string), set to lowercase, includes 'apple'
+      counter++;
+    }                                                         //If the current key includes 'apple'
 
-
-    if(appleArray.includes('apple')) {                         //if the array includes apple
-      counter++;                                              //increase the counter by one
-    }
   }
   return counter;                                              //return the counter
 }
