@@ -24,15 +24,17 @@ keyInObjectArray(objArray, 'animal'); // => false
 
 function keyInObjectArray(objArray, keyString) {
   for(let i = 0; i < objArray.length; i++) {       //loop over the array of objects
-    let currentObject = objArray[i];
+    let currentObject = objArray[i];                //now we're in an object
 
-    if (currentObject[keyString] !== undefined) {            // if the current object is not undefined it means it's there.
+    if (currentObject[keyString] !== undefined) {   //or, if(keyString in currentObject) {}
       return true;
     }                                             //If the value exists then the key exists
 
   }
   return false;
 }
+
+//replace line 29 with: if (keyString in currentObject)
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = keyInObjectArray;

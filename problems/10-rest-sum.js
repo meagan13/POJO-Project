@@ -8,10 +8,24 @@ restSum(3,5,6); // => 14
 restSum(1, 2, 3, 4, 5, 6, 7, 8, 9); // => 14
 restSum(0); // => 0
 ***********************************************************************/
+//Understand
+//  Create a function
+//  Accept all incoming parameters (rest parameter)
+//  Return the sum of all arguments
+//Plan
+//  use rest parameter to accept an indefinite number of arguments as an array
+//  loop over that array using forEach
+//  create a sum variable
+//  add the current num to the sum total
+//  return the sum
 
-// you'll need to change the parameters!
-function restSum() {
-  // your code here
+function restSum(...nums) {
+  let sum = 0;
+
+  nums.forEach(function(num){
+    sum += num;
+  });
+  return sum;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
